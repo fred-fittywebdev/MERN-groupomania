@@ -48,10 +48,10 @@ const Navbar = () => {
           <div className={classes.profile}>
             <Avatar className={classes.purple} alt={user?.result.name} src={user?.result.imageUrl}>{user?.result.name.charAt(0)}</Avatar>
             <Typography className={classes.userName} variant="h6">{user?.result.name}</Typography>
-            <Button variant="contained" className={classes.logout} color="secondary" onClick={logout}>Déconnexion</Button>
+            <Button variant="contained" className={classes.signIn} onClick={logout}>Déconnexion</Button>
           </div>
         ) : (
-          <Button component={Link} to="/auth" variant="contained" color="primary">Inscription</Button>
+          <Button className={classes.signIn} component={Link} to="/auth" variant="contained" >Connexion</Button>
         )}
       </Toolbar>
     </AppBar>

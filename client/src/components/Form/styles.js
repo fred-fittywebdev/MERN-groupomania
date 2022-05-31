@@ -34,5 +34,29 @@ export default makeStyles((theme) => ({
       backgroundColor: '#4e5166',
       color: '#fd2d01',
     }
+  },
+  emojiWrapper: {
+    position: 'relative',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'flex-end',
+    justifyContent: 'space-between',
+    padding: '10px 15px',
+  },
+  emojiImage: {
+    width: '30px',
+    cursor: 'pointer',
+  },
+  emojiIcon: {
+    cursor: 'pointer',
+    '&:hover': {
+      opacity: '0.6'
+    }
+  },
+  emoji: {
+    position: 'absolute',
+    right: '0',
+    top: '2.5rem',
+    zIndex: '5'
   }
 }));
