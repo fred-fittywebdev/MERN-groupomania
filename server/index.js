@@ -27,3 +27,4 @@ mongoose.connect(process.env.CONNECTION_URL,
   .then(() => console.log('Connexion à MongoDB réussie !'))
   .catch(() => console.log('Connexion à MongoDB échouée !'));
 
+mongoose.set('useFindAndModify', false);
