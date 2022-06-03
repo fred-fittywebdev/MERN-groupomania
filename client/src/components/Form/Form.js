@@ -1,8 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TextField, Button, Typography, Paper } from '@material-ui/core';
+import { TextField, Button, Typography, Paper, Box } from '@material-ui/core';
 import EmojiEmotionsOutlined from '@material-ui/icons/EmojiEmotionsOutlined'
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
+
 // Emoji
 import Picker from 'emoji-picker-react'
 //image
@@ -10,6 +11,9 @@ import colorFull from '../../images/colorful.png'
 
 import { createPost, updatePost } from '../../actions/posts';
 import useStyles from './styles';
+
+
+
 
 const Form = ({ currentId, setCurrentId }) => {
   const [postData, setPostData] = useState({ title: '', message: '', tags: '', selectedFile: '' });
@@ -49,10 +53,9 @@ const Form = ({ currentId, setCurrentId }) => {
     ref.focus()
   }
 
-
   if (!user?.result?.name) {
     return (
-      <Paper className={classes.paper}>
+      <Paper className={classes.paperForm}>
         <Typography variant="h6" align="center">
           Veuillez vous connecter pour créer un post ou intéragir avec vos collègues.
         </Typography>
@@ -61,6 +64,7 @@ const Form = ({ currentId, setCurrentId }) => {
   }
 
   return (
+
     <Paper className={classes.paper}>
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Modifier "${post.title}"` : 'Creer'}</Typography>

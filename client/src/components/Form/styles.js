@@ -8,6 +8,14 @@ export default makeStyles((theme) => ({
   },
   paper: {
     padding: theme.spacing(2),
+    margin: '15px auto',
+    width: '20%',
+    height: 'fit-content',
+  },
+  paperForm: {
+    padding: theme.spacing(2),
+    margin: '15px auto',
+    height: 'fit-content'
   },
   form: {
     display: 'flex',
@@ -58,5 +66,5 @@ export default makeStyles((theme) => ({
     right: '0',
     top: '2.5rem',
     zIndex: '5'
-  }
+  },
 }));
