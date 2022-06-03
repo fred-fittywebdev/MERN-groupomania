@@ -11,6 +11,10 @@ export default makeStyles((theme) => ({
     margin: '15px auto',
     width: '20%',
     height: 'fit-content',
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+
+    },
   },
   paperForm: {
     padding: theme.spacing(2),
@@ -25,6 +29,15 @@ export default makeStyles((theme) => ({
   fileInput: {
     width: '97%',
     margin: '10px 0',
+  },
+  imagePreviewWrapeer: {
+    width: '100%',
+  },
+  imagePreview: {
+    width: '100%',
+  },
+  closePreview: {
+    cursor: 'pointer',
   },
   buttonSubmit: {
     marginBottom: 10,

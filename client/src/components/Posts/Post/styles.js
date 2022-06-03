@@ -29,6 +29,7 @@ export default makeStyles((theme) => ({
     width: '40%',
     [theme.breakpoints.down('sm')]: {
       marginLeft: 0,
+      width: '100%',
     },
   },
   recommendedPosts: {
@@ -49,6 +50,10 @@ export default makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'space-between',
     padding: '10px',
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+
+    },
   },
   commentsContainer: {
     height: '200px',
