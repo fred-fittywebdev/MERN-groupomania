@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { TextField, Button, Typography, Paper, TextareaAutosize, } from '@material-ui/core';
+import { TextField, Button, Typography, Paper, TextareaAutosize, InputLabel, } from '@material-ui/core';
 import EmojiEmotionsOutlined from '@material-ui/icons/EmojiEmotionsOutlined'
 import CloseIcon from '@material-ui/icons/Close'
+import PermMedia from '@material-ui/icons/PermMedia'
 import { useDispatch, useSelector } from 'react-redux';
 import FileBase from 'react-file-base64';
 
@@ -70,13 +71,14 @@ const Form = ({ currentId, setCurrentId }) => {
       <form autoComplete="off" noValidate className={`${classes.root} ${classes.form}`} onSubmit={handleSubmit}>
         <Typography variant="h6">{currentId ? `Modifier "${post.title}"` : 'Creer'}</Typography>
         <TextField name="title" variant="outlined" label="Titre" fullWidth value={postData.title} onChange={(e) => setPostData({ ...postData, title: e.target.value })} />
-        <TextField ref={textRef} name="message" variant="outlined" label="Message" fullWidth multiline maxRows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
+        <TextField ref={textRef} name="message" variant="outlined" label="Message" fullWidth multiline rows={4} value={postData.message} onChange={(e) => setPostData({ ...postData, message: e.target.value })} />
         <TextField name="tags" variant="outlined" label="Tags (séparés par des virgules)" fullWidth value={postData.tags} onChange={(e) => setPostData({ ...postData, tags: e.target.value.split(',') })} />
-        <div className={classes.fileInput}><FileBase type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} /></div>
+        <InputLabel htmlFor="file" className={classes.fileInput}>
+          <FileBase inputProps={{ id: 'file' }} pro type="file" multiple={false} onDone={({ base64 }) => setPostData({ ...postData, selectedFile: base64 })} />
+        </InputLabel>
         {postData.selectedFile && (
           <div className={classes.imagePreviewWrapeer}>
             <CloseIcon className={classes.closePreview} onClick={() => setPostData({ ...postData, selectedFile: '' })} />
-
             <img className={classes.imagePreview} src={postData.selectedFile} alt="" />
           </div>
         )}

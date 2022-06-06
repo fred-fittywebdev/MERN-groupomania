@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux'
 import useStyles from './styles'
 import { commentPost } from '../../../actions/posts'
 
-const Comment = ({ post }) => {
+const Comment = ({ post, setCurrentId }) => {
     console.log(post)
     const classes = useStyles()
     const [comments, setComments] = useState(post?.comments)
