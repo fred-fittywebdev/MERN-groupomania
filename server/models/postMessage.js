@@ -1,5 +1,7 @@
 import mongoose from 'mongoose';
 
+const { ObjectId } = mongoose.Schema
+
 const postSchema = mongoose.Schema({
     title: String,
     message: String,
