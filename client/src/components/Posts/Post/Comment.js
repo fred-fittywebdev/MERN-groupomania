@@ -18,10 +18,10 @@ const Comment = ({ post, setCurrentId }) => {
         const finalComment = `${user.result.name}: ${comment}`
 
         const newComments = await dispatch(commentPost(finalComment, post._id))
-        setComment(newComments)
+        setComments(newComments)
         setComment('')
 
-        commentsRef.current.scrollIntoView({ behavior: 'smooth' })
+        //commentsRef.current.scrollIntoView({ behavior: 'smooth' })
 
     }
     return (

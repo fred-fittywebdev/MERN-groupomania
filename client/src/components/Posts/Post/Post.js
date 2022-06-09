@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { CardActions, Button, Typography, Modal, Box, Divider, Paper } from '@material-ui/core/';
 import ThumbUpAltIcon from '@material-ui/icons/ThumbUpAlt';
 import DeleteIcon from '@material-ui/icons/Delete';
@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom'
 import Comment from './Comment';
 import moment from 'moment';
 
-import { likePost, deletePost } from '../../../actions/posts';
+import { likePost, deletePost, getPosts } from '../../../actions/posts';
 import useStyles from './styles';
 
 
@@ -22,6 +22,7 @@ const Post = ({ post, setCurrentId }) => {
 
   const userId = user?.result?._id
   const hasLikedPost = likes.find((like) => like === userId);
+
 
   const handleLike = () => {
     dispatch(likePost(post._id))

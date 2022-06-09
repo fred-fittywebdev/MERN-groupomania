@@ -10,6 +10,8 @@ export default makeStyles((theme) => ({
     padding: theme.spacing(2),
     margin: '15px auto',
     width: '20%',
+    position: 'sticky',
+    top: '150px',
     height: 'fit-content',
     [theme.breakpoints.down('sm')]: {
       width: '100%',
@@ -19,7 +21,9 @@ export default makeStyles((theme) => ({
   paperForm: {
     padding: theme.spacing(2),
     margin: '15px auto',
-    height: 'fit-content'
+    height: 'fit-content',
+    position: 'sticky',
+    top: '100px',
   },
   form: {
     display: 'flex',
