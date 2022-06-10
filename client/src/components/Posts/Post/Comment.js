@@ -14,7 +14,8 @@ const Comment = ({ post, setCurrentId }) => {
     const dispatch = useDispatch()
     const commentsRef = useRef()
 
-    const handleClick = async () => {
+    const handleClick = async (e) => {
+        e.preventDefault()
         const finalComment = `${user.result.name}: ${comment}`
 
         const newComments = await dispatch(commentPost(finalComment, post._id))
